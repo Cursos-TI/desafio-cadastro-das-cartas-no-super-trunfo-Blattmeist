@@ -8,6 +8,8 @@ void Vencedora(int resultado) {
     } else if (resultado == 0) {
         // Se o resultado for 0
         printf("Carta 2\n");
+    } else {
+        printf("Empate\n");
     }
 }
 
@@ -29,7 +31,19 @@ int main() {
     printf("\n");
     printf("Cadastre duas cartas para começar!\n");
     printf("\n");
-    // Cadastro da Carta 1A
+    printf("Registre as cartas nesse modelo apresentado embaixo.\n");
+    printf("\n");
+    printf("Estado: C \n");
+    printf("Código: C01\n");
+    printf("Cidade: Fortal\n");
+    printf("População: 400\n");
+    printf("Área: 20\n");
+    printf("PIB: 800\n");
+    printf("Pontos Turísticos: 10\n");
+    printf("\n");
+
+    // Cadastro da Carta 1
+    
     printf("Informe as informações da Carta 1:\n");
     printf("Estado: ");
     scanf(" %c", &estado1);
@@ -102,25 +116,25 @@ int main() {
     printf("PIB: %.2f Milhões de reais.\n", pib2);
     printf("Pontos Turísticos: %d\n", pontos2);
     printf("Densidade Populacional: %.2f Mil Pessoas por Km²\n", Densidade2);
-    printf("renda percapta: %.2f Mil reais por pessoa.\n", rp2);
+    printf("PIB Per Capta: %.2f Mil reais por pessoa.\n", rp2);
     printf("\n");
     printf("A carta %s tem super poder de valor: %.2f\n", codigo2, super2);
 
     //Aqui eu faço as comparações
 
-    int pop = populacao1 > populacao2;
-    int area = area1 > area2;
-    int pib = pib1 > pib2;
-    int pontos = pontos1 > pontos2;
-    int dens = Densidade1 < Densidade2;
-    int rp = rp1 > rp2;
-    int super = super1 > super2;
+    int pop = (populacao1 == populacao2) ? -1 : (populacao1 > populacao2);
+    int area = (area1 == area2) ? -1: (area1 > area2);
+    int pib = (pib1 == pib2) ? -1: (pib1 > pib2);
+    int pontos = (pontos1 == pontos2) ? -1: (pontos1 > pontos2);
+    int dens = (Densidade1 == Densidade2) ? -1: Densidade1 < Densidade2;
+    int rp = (rp1 == rp2) ? -1: (rp1 > rp2);
+    int super = (super1 > super2) ? -1: (super1 > super2);
 
 
     //Aqui eu exibo os resultados
 
     printf("\n");
-    printf("Vamos ver quais cartas foram as vencedoras!/n");
+    printf("Vamos ver quais cartas foram as vencedoras!\n");
     printf("\n");
     printf ("no quesito População a vencedora é:");
     Vencedora(pop);
