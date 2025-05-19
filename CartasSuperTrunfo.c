@@ -128,7 +128,7 @@ int main() {
     int pontos = (pontos1 == pontos2) ? -1: (pontos1 > pontos2);
     int dens = (Densidade1 == Densidade2) ? -1: Densidade1 < Densidade2;
     int rp = (rp1 == rp2) ? -1: (rp1 > rp2);
-    int super = (super1 > super2) ? -1: (super1 > super2);
+    int super = (super1 == super2) ? -1: (super1 > super2);
 
 
     //Aqui eu exibo os resultados
